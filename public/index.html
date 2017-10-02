@@ -1,0 +1,28 @@
+<DOCTYPE !html>
+  <html>
+    <head>
+        <title>Zip code App </title>
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/css/bootstrap.css" />
+    </head>
+    <body ng-app="zipCodeApp">
+      <div  ng-controller="mainCntrl">
+      <div id="getCity_div">
+        <p> Enter zip Code To get City</p>
+        Zip Code: <input type="text" ng-model="zip_code" />
+        <button id="getCityBtn" ng-click="getCity();">Get City </button>
+        <div id="city_div">
+          <div ng-repeat="city in fetched_cities">{{fetched_cities}} </div>
+      </div>
+      <div id="getCity_div">
+        <p> Enter City and State To get Zip Code</p>
+        City: <input type="text" ng-model="city_name"/>
+        State: <input type="text"ng-model="state_name" />
+        <button id="getZipCodeBtn" ng-click="getzipCodes();">Get Zip Code </button>
+        <div id="zipCode_div"> {{fetched_codes}}</div>
+      </div>
+      </div>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+      <script src="app.js"> </script>
+      <script src="restService.js"> </script>
+    </body>
+  </html>
